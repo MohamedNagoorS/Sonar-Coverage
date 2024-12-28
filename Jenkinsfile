@@ -23,25 +23,18 @@ pipeline{
             }
             steps{
                 bat '''
-                set PATH=%PYTHON_PATH%;%PATH%
-                sonar-scanner sonar.sources=.
-                sonar.python.version=3.x
-                sonar.language=python
-                sonar.projectKey=project-with-coverage
-
-
-                # Tests
-                sonar.tests=.
-                sonar.test.inclusions=test_*.py
-                sonar.python.xunit.reportPath=test-reports/pytest-report.xml
-
-                # Coverage
-                sonar.python.coverage.reportPaths=coverage.xml
-                sonar.coverage.exclusions=test_*.py
-
-                # Other settings
-                sonar.host.url=http://localhost:9000
-                sonar.sourceEncoding=UTF-8
+                set PATH=%PYTHON_PATH%;%PATH% 
+                -Dsonar-scanner sonar.sources=. ^
+                -Dsonar.python.version=3.x ^
+                -Dsonar.language=python ^
+                -Dsonar.projectKey=project-with-coverage ^
+                -Dsonar.tests=. ^
+                -Dsonar.test.inclusions=test_*.py ^
+                -Dsonar.python.xunit.reportPath=test-reports/pytest-report.xml ^
+                -Dsonar.python.coverage.reportPaths=coverage.xml ^
+                -Dsonar.coverage.exclusions=test_*.py ^
+                -Dsonar.host.url=http://localhost:9000 ^
+                -Dsonar.sourceEncoding=UTF-8 ^
                 '''
             }
         }
