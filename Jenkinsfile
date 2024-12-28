@@ -13,6 +13,8 @@ pipeline{
             steps{
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
+                sonar-scanner --version
+
                 pip install pytest pytest-cov coverage
                 '''
             }
