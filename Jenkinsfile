@@ -24,7 +24,7 @@ pipeline{
             steps{
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH% 
-                -Dsonar-scanner sonar.sources=. ^
+                sonar-scanner -Dsonar.sources=. ^
                 -Dsonar.python.version=3.x ^
                 -Dsonar.language=python ^
                 -Dsonar.projectKey=project-with-coverage ^
