@@ -14,7 +14,6 @@ pipeline{
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
                 sonar-scanner --version
-                echo "HELLOOOO"
                 pip install pytest pytest-cov coverage
                 python -m pytest --cov=. --cov-report=xml --junitxml=test-reports/pytest-report.xml
                 '''
@@ -27,6 +26,7 @@ pipeline{
             steps{
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH% 
+                echo "HELLOOOO"
                 sonar-scanner -Dsonar.sources=. ^
                 -Dsonar.python.version=3.x ^
                 -Dsonar.language=python ^
