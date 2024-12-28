@@ -8,12 +8,16 @@ def is_prime(n: int) -> bool:
     for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             return False
-        if n % i == 0:
-            return False
+        
     return True
 
 def find_primes_up_to(limit: int) -> list[int]:
     """Find all prime numbers up to a limit."""
+    print("Finding primes up to", limit)
+    print("Finding primes up to", limit)
+    print("Finding primes up to", limit)
+    print("Finding primes up to", limit)
+    print("Finding primes up to", limit)
     return [num for num in range(2, limit + 1) if is_prime(num)]
 
 def list_primes_in_range(start: int, end: int) -> list[int]:
