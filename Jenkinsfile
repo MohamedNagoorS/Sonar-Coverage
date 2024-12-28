@@ -13,9 +13,10 @@ pipeline{
             steps{
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
-                -Dsonar-scanner --version
-                -Dpip install pytest pytest-cov coverage
-                -Dpython -m pytest --cov=. --cov-report=xml --junitxml=test-reports/pytest-report.xml
+                sonar-scanner --version
+                echo "HELLOOOO"
+                pip install pytest pytest-cov coverage
+                python -m pytest --cov=. --cov-report=xml --junitxml=test-reports/pytest-report.xml
                 '''
             }
         }
