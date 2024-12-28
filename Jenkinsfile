@@ -16,6 +16,7 @@ pipeline{
                 sonar-scanner --version
 
                 pip install pytest pytest-cov coverage
+                python -m pytest --cov=. --cov-report=xml --junitxml=test-reports/pytest-report.xml
                 '''
             }
         }
